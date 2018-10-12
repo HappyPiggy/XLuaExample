@@ -1,0 +1,19 @@
+print('load fixed.lua')
+
+--[[
+xlua.private_accessible(CS.CreatePrefabs)
+xlua.hotfix(CS.CreatePrefabs,'Start',function(self)
+	print('123123')
+end)
+--]]
+   
+
+---[[
+xlua.private_accessible(CS.CreatePrefabs)
+local util=require 'util'
+util.hotfix_ex(CS.CreatePrefabs,'Start',function(self)
+	--print('2')
+	self:Start()
+	self.hotfixScript:LoadResource("cube1","gameobject/cube.ab")
+end)
+--]]
